@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <dimen name="ly_pay_main_order_frame_height">310dip</dimen>
+    <dimen name="ly_pay_main_order_frame_margin">15dip</dimen>
+    <dimen name="ly_pay_main_order_frame_padding">15dip</dimen>
+    <dimen name="ly_pay_main_order_frame_amount_margin_top">0dip</dimen>
+    <dimen name="ly_pay_main_order_frame_amount_tips_padding_bottom">10dip</dimen>
+    <dimen name="ly_pay_main_order_frame_amount_tips_margin_left">35dip</dimen>
+    <dimen name="ly_pay_main_order_frame_amount_tips_text_size">10sp</dimen>
+    <string name="ly_pay_main_order_frame_amount_tips_text">金额仅限当前商品</string>
+    
+    <dimen name="ly_pay_main_order_iv_width">23dip</dimen>
+    <dimen name="ly_pay_main_order_iv_height">23dip</dimen>
+    <dimen name="ly_pay_main_order_iv_margin_left">4dip</dimen>
+    <dimen name="ly_pay_main_order_iv_margin_right">8dip</dimen>
+    
+    <string name="ly_pay_main_order_item_title_pay_amount_text">支付金额</string>
+    <dimen name="ly_pay_main_order_item_title_pay_amount_text_size">20sp</dimen>
+    <string name="ly_pay_main_order_item_amount_unit_text">元</string>
+    <dimen name="ly_pay_main_order_item_amount_unit_text_size">20sp</dimen>
+    <dimen name="ly_pay_main_order_item_order_amount_text_size">60sp</dimen>
+    
+    
+    <string name="ly_pay_main_order_item_title_username_text">用户账户</string>
+    <dimen name="ly_pay_main_order_item_username_margin_top">10sp</dimen>
+    <dimen name="ly_pay_main_order_item_title_username_text_size">18sp</dimen>
+    <dimen name="ly_pay_main_order_item_username_text_size">18sp</dimen>
+    <dimen name="ly_pay_main_order_item_username_line_margin_top">10dip</dimen>
+    
+    <string name="ly_pay_main_order_item_title_product_description_text">商品描述</string>
+    <dimen name="ly_pay_main_order_item_title_product_description_text_size">18sp</dimen>
+    <dimen name="ly_pay_main_order_item_product_description_content_text_size">16sp</dimen>
+    <dimen name="ly_pay_main_order_item_product_description_content_text_padding">10sp</dimen>
+    
+    
+    <dimen name="ly_pay_main_order_item_code_height">45sp</dimen>
+    <dimen name="ly_pay_main_order_item_code_margin_top">10sp</dimen>
+    <dimen name="ly_pay_main_order_item_code_margin_left">10sp</dimen>
+    <dimen name="ly_pay_main_order_item_code_margin_right">10sp</dimen>
+    <dimen name="ly_pay_main_order_item_code_margin_bottom">5sp</dimen>
+    
+    
+    <dimen name="ly_pay_main_pay_method_item_height">50dip</dimen>
+    <dimen name="ly_pay_main_pay_method_item_margin_left">20dip</dimen>
+    <dimen name="ly_pay_main_pay_method_item_margin_right">20dip</dimen>
+    <dimen name="ly_pay_main_pay_method_item_margin_top">10dip</dimen>
+    <dimen name="ly_pay_main_pay_method_item_padding">10dip</dimen>
+    <string name="ly_pay_main_pay_method_item_title_text">支付方式</string>
+    <dimen name="ly_pay_main_pay_method_item_title_text_size">18sp</dimen>
+    <dimen name="ly_pay_main_pay_method_arrow_width">9dip</dimen>
+    <dimen name="ly_pay_main_pay_method_arrow_height">16dip</dimen>
+    <dimen name="ly_pay_main_pay_method_pay_img_width">50dip</dimen>
+    <dimen name="ly_pay_main_pay_method_pay_img_height">20dip</dimen>
+    <dimen name="ly_pay_main_pay_method_pay_img_margin_right">10dip</dimen>
+    
+    
+    <dimen name="ly_pay_main_sure_pay_btn_height">50dip</dimen>
+    <dimen name="ly_pay_main_sure_pay_btn_margin">20dip</dimen>
+    <dimen name="ly_pay_main_sure_pay_btn_text_size">18sp</dimen>
+    <string name="ly_pay_main_sure_pay_btn_title_text">确认支付</string>
+    
+    
+    
+</resources>

@@ -1,0 +1,61 @@
+# view AndroidManifest.xml #generated:90
+-keep class com.alipay.sdk.app.H5PayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:50
+-keep class com.holagame.sdk.ac.ActivityWeb { <init>(...); }
+
+# view AndroidManifest.xml #generated:73
+-keep class com.holagames.xcds.ac.ActivityBindPhone { <init>(...); }
+
+# view AndroidManifest.xml #generated:129
+-keep class com.holagames.xcds.ac.ActivityGameNoticePage { <init>(...); }
+
+# view AndroidManifest.xml #generated:78
+-keep class com.holagames.xcds.ac.ActivityUpdateAccount { <init>(...); }
+
+# view AndroidManifest.xml #generated:68
+-keep class com.holagames.xcds.ac.ActivityUser { <init>(...); }
+
+# view AndroidManifest.xml #generated:63
+-keep class com.holagames.xcds.ac.ExitSDKActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:57
+-keep class com.holagames.xcds.ac.SdkLoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:120
+-keep class com.holagames.xcds.gamecenter.FloatViewService { <init>(...); }
+
+# view AndroidManifest.xml #generated:85
+-keep class com.holagames.xcds.pay.LyPayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:135
+-keep class com.holagames.xcds.pay.weixinpay.AppRegister { <init>(...); }
+
+# view AndroidManifest.xml #generated:100
+-keep class com.holagames.xcds.pay.weixinpay.LyWeixinPay { <init>(...); }
+
+# view AndroidManifest.xml #generated:114
+-keep class com.longyuan.sdk.pay.tenpay.LyCftPayActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:42
+-keep class com.longyuan.sdkdemo.TestCoupon { <init>(...); }
+
+# view AndroidManifest.xml #generated:31
+-keep class com.qianhuan.yxgsd.holagamesdk.MainActivity { <init>(...); }
+
+# view res/layout/mm_title.xml #generated:10
+# view res/layout/mm_title.xml #generated:28
+-keep class com.tencent.mm.sdk.uikit.MMImageButton { <init>(...); }
+
+# view res/layout/security_image.xml #generated:2
+-keep class com.tencent.mm.sdk.uikit.applet.SecurityImage { <init>(...); }
+
+# view AndroidManifest.xml #generated:113
+-keep class com.unionpay.uppay.PayActivity { <init>(...); }
+
+# onClick res/layout/ilong_activity_bind_phone.xml #generated:26
+-keepclassmembers class * { *** backPress(...); }
+
+# onClick res/layout/activity_demo_main.xml #generated:138
+-keepclassmembers class * { *** click(...); }
+

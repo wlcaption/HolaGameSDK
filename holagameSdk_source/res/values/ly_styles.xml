@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="android:Theme.Light"></style>
+
+    <style name="AppTheme" parent="AppBaseTheme"></style>
+
+    <style name="bind_phone_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+
+<!--     五边框有阴影样式 -->
+    <style name="security_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+    
+    <style name="pay_passworld_animation" parent="android:Animation">
+           <item name="android:windowEnterAnimation">@anim/slide_buttom_in</item>  
+        <item name="android:windowExitAnimation">@anim/slide_buttom_out</item>  
+    </style>
+
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="ilongyuanAppUpdataCanCancle" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AlertDialog" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/popup_bg</item>
+    </style>
+
+    <style name="Dialog_update">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <style name="dialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 模糊 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <!-- item name="android:windowCloseOnTouchOutside">false</item -->
+        <!-- item name="android:windowActionBar">false</item -->
+    </style>
+
+    <style name="ilong_btn_go_into">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:layout_marginTop">15dip</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">?attr/sdk_bt_backGround</item>
+    </style>
+
+    <style name="ilong_btn_go_into_not_register">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:layout_marginTop">15dip</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/ilong_btn_go_into_not_register</item>
+    </style>
+
+    <style name="ilong_dialog_frame_portait">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_margin">20dip</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:paddingRight">10dip</item>
+        <item name="android:paddingTop">10dip</item>
+        <item name="android:paddingBottom">5dip</item>
+        <item name="android:background">@drawable/ilong_alpha_bg</item>
+    </style>
+
+    <style name="ilong_dialog_container_frame_portait">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_margin">20dip</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ilong_dialog_container_frame_landscape">
+        <item name="android:layout_width">320dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="ilong_dialog_frame_landscape">
+        <item name="android:layout_width">320dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:paddingLeft">10dip</item>
+        <item name="android:paddingRight">10dip</item>
+        <item name="android:paddingTop">10dip</item>
+        <item name="android:paddingBottom">5dip</item>
+        <item name="android:background">@drawable/ilong_alpha_bg</item>
+    </style>
+
+    <style name="ilong_dialog_logo_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dip</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ilong_dialog_logo_layout_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">?attr/sdk_textColor</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:ellipsize">marquee</item>
+    </style>
+
+    <style name="ilong_dialog_logo_layout_line">
+        <item name="android:layout_width">1.5dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:layout_marginRight">5dip</item>
+        <item name="android:layout_marginTop">15dip</item>
+        <item name="android:layout_marginBottom">15dip</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="ilong_dialog_edittext">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">44dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@null</item>
+        <item name="android:paddingLeft">5dip</item>
+    </style>
+
+    <style name="ilong_dialog_edittext_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/ilong_radius_white_bg</item>
+        <item name="android:paddingLeft">5dip</item>
+    </style>
+
+    <style name="ilong_btn_exit_sdk">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">40dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/ilong_btn_go_into</item>
+    </style>
+
+    <style name="Anim_style2" parent="android:Theme.NoTitleBar">
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+    <style name="IlongBasicDialogStyle" parent="android:Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!-- 主题分割线 -->
+    <style name="Ilong_Theme">
+        <item name="sdk_textColor">@color/new_login_blue_textcolor</item>
+        <item name="sdk_bt_backGround">@drawable/ilong_btn_go_into</item>
+        <item name="sdk_bg">@color/new_login_blue_textcolor</item>
+        <item name="sdk_buttom_line">@color/new_login_blue_textcolor</item>
+        <item name="sdk_logo">@drawable/ilong_logo</item>
+        <item name="sdk_name_icon">@drawable/ilong_icon_user</item>
+        <item name="sdk_verification_code">@drawable/ilong_regist_verification_code</item>
+        <item name="sdk_p_lock">@drawable/reg_p_open</item>
+        <item name="sdk_phone_ico">@drawable/ilong_icon_phone</item>
+        <item name="sdk_switch_account_ico">@drawable/ilong_icon_switchaccount</item>
+        <item name="sdk_dialog_bind_go">@drawable/ilong_bind_go</item>
+        <item name="sdk_float_ico">@drawable/icon_drag</item>
+        <item name="sdk_ilong_radius_bg">@drawable/ilong_radius_white_bg</item>
+        <!-- 注册页面 -->
+
+        <item name="sdk_regist_left_arrow">@drawable/ilong_regist_left_arrow</item>
+        <item name="sdk_regist_user_protocol">@color/hr_textcolor</item>
+        <!-- 登录 -->
+        <item name="sdk_login_title_name">@string/ilong_login_title_name</item>
+        <item name="sdk_login_more_userinfo">@drawable/ilong_login_da</item>
+        <item name="sdk_login_loading">@drawable/ilong_login_loading_blue</item>
+        <!-- 登录加载 -->
+        <item name="sdk_login_loading_iv">@drawable/ilong_layout_loading_ig</item>
+        <!-- 个人中心 -->
+        <item name="sdk_user_info_title">@string/ilong_userinfo_title_name</item>
+        <item name="sdk_userinfo_level_tag_image">@drawable/level_icon</item>
+        <item name="sdk_userinfo_longyuanbi_tag_image">@drawable/money_icon</item>
+        <item name="sdk_userinfo_userid">@string/ilong_userinfo_id</item>
+        <item name="sdk_userinfo_switch_account">@drawable/ilong_swicth_account</item>
+        <item name="sdk_longyuanbi_tag_text">@string/ilong_userinfo_longyuanbi</item>
+        <!-- 账号升级 -->
+        <item name="sdk_accountupdata_right_arrow">@drawable/ilong_account_arrow</item>
+        <item name="sdk_accountupdata_urserlogo">@drawable/ilong_account_username</item>
+        <!-- WebView界面 -->
+        <item name="sdk_webview_loading_ico">@drawable/ilongyuan_loading_web</item>
+        <item name="sdk_webview_left">@drawable/ilong_activity_pay_back</item>
+        <item name="sdk_webview_close">@drawable/ilong_activity_pay_close</item>
+        <!-- 升级提示界面 -->
+        <item name="sdk_account_security_context">@string/ilong_account_security</item>
+        <!-- 升级完成提示界面 -->
+        <item name="sdk_account_finish_context">@string/ilong_account_finish</item>
+        <item name="sdk_account_finish_ico">@drawable/ilong_bind_suc_icon</item>
+        <!-- 切换账号提示 -->
+        <item name="sdk_switch_alert_sure_bt">@drawable/ilong_update_warn_confirm</item>
+        <!-- 支付界面 -->
+        <item name="sdk_sdkpay_ico">@drawable/p_longyuan_selector</item>
+        <item name="sdk_alipay_ico">@drawable/p_alipay_selector</item>
+        <item name="sdk_uninpay_ico">@drawable/p_uni_selector</item>
+        <item name="sdk_tecentpay_ico">@drawable/p_ten_selector</item>
+        <item name="sdk_sdkpay_name">@string/ilong_pay_sdk_name</item>
+    </style>
+    <!-- 浩然游主题 -->
+    <style name="HR_Theme">
+        <item name="sdk_textColor">@color/hr_textcolor</item>
+        <item name="sdk_bt_backGround">@drawable/hr_btn_go_into</item>
+        <item name="sdk_bg">@color/new_login_blue_textcolor</item>
+        <item name="sdk_buttom_line">@color/hr_textcolor</item>
+        <item name="sdk_logo">@drawable/haoran_logo</item>
+        <item name="sdk_name_icon">@drawable/hr_icon_user</item>
+        <item name="sdk_verification_code">@drawable/hr_regist_verification_code</item>
+        <item name="sdk_p_lock">@drawable/hr_reg_p_open</item>
+        <item name="sdk_phone_ico">@drawable/hr_icon_phone</item>
+        <item name="sdk_switch_account_ico">@drawable/hr_icon_switchaccount</item>
+        <item name="sdk_dialog_bind_go">@drawable/hr_bind_go</item>
+        <item name="sdk_float_ico">@drawable/hr_icon_drag</item>
+        <item name="sdk_ilong_radius_bg">@drawable/hr_radius_yellow_bg</item>
+        <!-- 注册页面 -->
+        <item name="sdk_regist_left_arrow">@drawable/hr_regist_left_arrow</item>
+        <item name="sdk_regist_user_protocol">@color/hr_regist_protocol_tv_color</item>
+        <!-- 登录 -->
+        <item name="sdk_login_title_name">@string/hr_login_title_name</item>
+        <item name="sdk_login_more_userinfo">@drawable/hr_login_da</item>
+        <item name="sdk_login_loading">@drawable/hr_login_loading_yellow</item>
+        <!-- 登录加载 -->
+        <item name="sdk_login_loading_iv">@drawable/hr_layout_loading_ig</item>
+        <!-- 个人中心 -->
+        <item name="sdk_user_info_title">@string/hr_userinfo_title_name</item>
+        <item name="sdk_userinfo_level_tag_image">@drawable/hr_level_icon</item>
+        <item name="sdk_userinfo_longyuanbi_tag_image">@drawable/hr_money_icon</item>
+        <item name="sdk_userinfo_userid">@string/hr_userinfo_id</item>
+        <item name="sdk_userinfo_switch_account">@drawable/hr_swicth_account</item>
+        <item name="sdk_longyuanbi_tag_text">@string/hr_userinfo_longyuanbi</item>
+        <!-- 账号升级 -->
+        <item name="sdk_accountupdata_right_arrow">@drawable/hr_account_arrow</item>
+        <item name="sdk_accountupdata_urserlogo">@drawable/hr_account_username</item>
+        <!-- WebView界面 -->
+        <item name="sdk_webview_loading_ico">@drawable/hr_loading_web</item>
+        <item name="sdk_webview_left">@drawable/hr_activityweb_return_btn</item>
+        <item name="sdk_webview_close">@drawable/hr_chacha_03</item>
+        <!-- 升级提示界面 -->
+        <item name="sdk_account_security_context">@string/hr_account_security</item>
+        <!-- 升级完成提示界面 -->
+        <item name="sdk_account_finish_context">@string/hr_account_finish</item>
+        <item name="sdk_account_finish_ico">@drawable/hr_bind_suc_icon</item>
+        <!-- 切换账号提示 -->
+        <item name="sdk_switch_alert_sure_bt">@drawable/hr_update_warn_confirm</item>
+        <!-- 支付界面 -->
+        <item name="sdk_sdkpay_ico">@drawable/p_hr_selector</item>
+        <item name="sdk_alipay_ico">@drawable/hr_p_alipay_selector</item>
+        <item name="sdk_uninpay_ico">@drawable/hr_p_uni_selector</item>
+        <item name="sdk_tecentpay_ico">@drawable/hr_p_ten_selector</item>
+        <item name="sdk_sdkpay_name">@string/hr_pay_sdk_name</item>
+    </style>
+    <!-- 主题分割线 -->
+
+</resources>

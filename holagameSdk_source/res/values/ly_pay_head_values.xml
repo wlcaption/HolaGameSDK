@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="ly_pay_head_height">48dip</dimen>
+     <string name="ly_pay_head_title_text">游戏支付平台</string>
+     <dimen name="ly_pay_head_title_size">20sp</dimen>
+     <dimen name="ly_pay_head_back_iv_width">18dip</dimen>
+     <dimen name="ly_pay_head_back_iv_height">31dip</dimen>
+     <dimen name="ly_pay_head_item_padding">7dip</dimen>
+</resources>

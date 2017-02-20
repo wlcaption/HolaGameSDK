@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- TextView定义自己的属性 -->
+    <attr name="sdk_textColor" format="reference|color" />
+    <!-- Button定义自己的属性 -->
+    <attr name="sdk_bt_backGround" format="reference|color" />
+    <!-- activity背景 -->
+    <attr name="sdk_bg" format="reference|color" />
+    <attr name="sdk_buttom_line" format="reference|color" />
+    <attr name="sdk_logo" format="reference" />
+    <!-- 用户名称ico -->
+    <attr name="sdk_name_icon" format="reference" />
+    <!-- 验证码ico -->
+    <attr name="sdk_verification_code" format="reference" />
+    <!-- 确认密码ico -->
+    <attr name="sdk_p_lock" format="reference" />
+    <!-- 手机ico -->
+    <attr name="sdk_phone_ico" format="reference" />
+    <!-- 切换ico -->
+    <attr name="sdk_switch_account_ico" format="reference" />
+    <!-- dialog中比较小的一种button背景 -->
+    <attr name="sdk_dialog_bind_go" format="reference" />
+    <!-- 悬浮窗背景 -->
+    <attr name="sdk_float_ico" format="reference" />
+    <attr name="sdk_ilong_radius_bg" format="reference" />
+ <!-- 所有属性均属当前页面，其它页面不可用 -->
+  <!-- 注册 -->
+    <attr name="sdk_regist_left_arrow" format="reference" />
+	<!--用户协议颜色 -->
+    <attr name="sdk_regist_user_protocol" format="reference"/>
+  <!-- 登录 -->
+    <!-- 登录标题 -->
+    <attr name="sdk_login_title_name" format="reference" />
+    <attr name="sdk_login_loading" format="reference"></attr>
+    <!-- 加载更多 -->
+    <attr name="sdk_login_more_userinfo" format="reference" />
+  <!-- 登录加载界面 -->
+    <!-- 加载ico -->
+    <attr name="sdk_login_loading_iv" format="reference" />
+  <!-- 个人中心 -->
+    <!-- 标题 -->
+    <attr name="sdk_user_info_title" format="reference|string" />
+    <!-- 等级ico -->
+    <attr name="sdk_userinfo_level_tag_image" format="reference" />
+    <!-- 龙远币ico -->
+    <attr name="sdk_userinfo_longyuanbi_tag_image" format="reference" />
+    <!-- 用户ID -->
+    <attr name="sdk_userinfo_userid" format="reference|string" />
+    <!-- 火拉币提示 -->
+    <attr name="sdk_longyuanbi_tag_text" format="reference|string" />
+  <!-- 切换账号 -->
+    <attr name="sdk_userinfo_switch_account" format="reference" />
+  <!-- 账号升级 -->
+    <!-- 切换账号向右的按钮 -->
+    <attr name="sdk_accountupdata_right_arrow" format="reference" />
+    <attr name="sdk_accountupdata_urserlogo" format="reference" />
+  <!-- WebView界面 -->
+    <!-- 加载ico -->
+    <attr name="sdk_webview_loading_ico" format="reference" />
+    <!-- 返回ico -->
+    <attr name="sdk_webview_left" format="reference" />
+    <!-- 关闭ico -->
+    <attr name="sdk_webview_close" format="reference" />
+  <!-- 升级提示界面 -->
+    <attr name="sdk_account_security_context" format="reference|string" />
+  <!-- 升级完成提示界面 -->
+    <!-- 提示语 -->
+    <attr name="sdk_account_finish_context" format="reference|string" />
+    <!-- 界面图标ico -->
+    <attr name="sdk_account_finish_ico" format="reference" />
+  <!-- 切换账号提示 -->
+    <attr name="sdk_switch_alert_sure_bt" format="reference" />
+ <!-- 支付界面-->
+ 	<!--  财付通支付 -->
+	<attr name="sdk_sdkpay_name" format="reference|string"/>
+	<!--  火拉或者浩然支付 -->
+	<attr name="sdk_sdkpay_ico" format="reference"/>
+	<!--  支付宝支付 -->
+	<attr name="sdk_alipay_ico" format="reference"/>
+	<!--  银联支付 -->
+	<attr name="sdk_uninpay_ico" format="reference"/>
+	<!--  财付通支付 -->
+	<attr name="sdk_tecentpay_ico" format="reference"/>
+</resources>

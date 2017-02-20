@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 绿色的文字带点击效果 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- pressed -->
+    <item android:state_pressed="true" android:color="#cccccc"/>
+    <!-- focused -->
+    <item android:state_focused="true" android:color="#cccccc"/>
+    <!-- selected -->
+    <item android:state_selected="true" android:color="#cccccc"/>
+    <!-- checked -->
+    <item android:state_checked="true" android:color="#cccccc"/>
+
+    <!-- active -->
+    <item android:state_active="true" android:color="#ffffff"/>
+    <!-- checkable -->
+    <item android:state_checkable="true" android:color="#ffffff"/>
+    <!-- enabled -->
+    <item android:state_enabled="true" android:color="#ffffff"/>
+    <!-- window_focused -->
+    <item android:state_window_focused="true" android:color="#ffffff"/>
+
+</selector>

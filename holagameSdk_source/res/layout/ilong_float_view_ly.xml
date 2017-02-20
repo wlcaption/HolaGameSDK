@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/float_circle_size"
+    android:layout_height="@dimen/float_circle_size"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/float_imageview"
+        android:layout_width="@dimen/float_circle_size"
+        android:layout_height="@dimen/float_circle_size"
+        android:focusable="true"
+        android:background="@drawable/icon_drag"
+        android:contentDescription="@null" />
+
+</LinearLayout>

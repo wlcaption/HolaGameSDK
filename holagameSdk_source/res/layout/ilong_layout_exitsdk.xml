@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ilong_dialog_frame_portait" >
+
+    <LinearLayout style="@style/ilong_dialog_logo_layout" >
+
+        <ImageView
+            android:layout_width="38dip"
+            android:layout_height="38dip"
+            android:background="@drawable/logo" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_gravity="center_vertical"
+            android:textSize="17sp"
+            android:text="您即将退出游戏!"
+            />
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:layout_marginBottom="10dip"
+        >
+        <Button 
+            android:id="@+id/ilong_exit_sdk_continue_btn"
+            style="@style/ilong_btn_exit_sdk"
+            android:text="继续游戏"
+            />
+        <Button 
+            android:id="@+id/ilong_exit_sdk_out_btn"
+            style="@style/ilong_btn_exit_sdk"
+            android:layout_marginLeft="10dip"
+            android:text="退出游戏"
+            />
+    </LinearLayout>
+    
+</LinearLayout>

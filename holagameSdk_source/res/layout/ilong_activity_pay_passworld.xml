@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f2f2f2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="火拉币支付密码"
+            android:textColor="#202020"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/ilong_dialog_passworld_close"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ilong_passworld_dialog_close"
+            android:background="@android:color/transparent"
+            android:padding="10dp"
+             />
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CFCFCF"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="20dp" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/ilong_activity_passworld_tv1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ilong_passworld_radius_white_bg"
+                android:gravity="center"
+                android:maxLength="1"
+                android:paddingTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="40sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/ilong_activity_passworld_tv2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:maxLength="1"
+                android:paddingTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="40sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/ilong_activity_passworld_tv3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:maxLength="1"
+                android:paddingTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="40sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/ilong_activity_passworld_tv4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:maxLength="1"
+                android:paddingTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="40sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/ilong_activity_passworld_tv5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:maxLength="1"
+                android:paddingTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="40sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/ilong_activity_passworld_tv6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:maxLength="1"
+                android:paddingTop="8dp"
+                android:textColor="@android:color/black"
+                android:textSize="40sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <GridView
+        android:id="@+id/passworld_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:columnWidth="200dp"
+        android:gravity="center"
+        android:horizontalSpacing="5dp"
+        android:scrollbars="none"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp" >
+    </GridView>
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+    <LinearLayout
+        android:layout_width="320dip"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ilong_dialog_crad_title_bg"
+                android:gravity="center"
+                android:text="实 名 认 证"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:visibility="gone"
+                android:id="@+id/ilong_dialog_user_id_card_close"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="10dp"
+                android:background="@color/transparent"
+                android:src="@drawable/ilong_activity_pay_close" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:background="@drawable/ilong_dialog_crad_context_bg" >
+
+            <LinearLayout
+                android:id="@+id/ilong_dialog_card_prompt"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ilong_dialog_crad_prompt_bg"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp" >
+
+                <View
+                    android:layout_width="22dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ilong_dialog_crad_prompt_icon" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="根据文化部《网络游戏管理暂行办法》的相关要求网络游戏用户需要实名认证，请确保所填信息真实有效，认证成功后，不可更改。"
+                    android:textColor="#219DEF"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="220dp"
+                android:layout_below="@id/ilong_dialog_card_prompt"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ilong_dialog_crad_et_bg" >
+
+                    <ImageView
+                        android:id="@+id/ilong_dialog_card_user_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ilong_dialog_crad_user_icon" />
+
+                    <EditText
+                        android:id="@+id/user_id_card_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/ilong_dialog_card_user_icon"
+                        android:background="@android:color/transparent"
+                        android:hint="请输入姓名"
+                        android:maxLength="20"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ilong_dialog_prompt_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ilong_dialog_crad_et_bg" >
+
+                    <ImageView
+                        android:id="@+id/ilong_dialog_card_number_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="10dp"
+                        android:src="@drawable/ilong_dialog_crad_nubmer_icon" />
+
+                    <EditText
+                        android:id="@+id/user_id_card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/ilong_dialog_card_number_icon"
+                        android:background="@android:color/transparent"
+                        android:hint="请输入18位身份证号码"
+                        android:maxLength="18"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/user_id_card_authentication_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@id/ilong_dialog_prompt_rl"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/hr_btn_go_into"
+                    android:text="立即认证"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

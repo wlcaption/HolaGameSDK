@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="48dip"
+    android:layout_height="48dip"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/float_imageview"
+        android:layout_width="48dip"
+        android:layout_height="48dip"
+        android:background="?attr/sdk_float_ico"
+        android:contentDescription="@null" />
+
+</LinearLayout>

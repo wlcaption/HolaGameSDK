@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="80dp"
+    android:layout_marginRight="80dp"
+    android:background="@drawable/ilong_square_radius"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="支付结果"
+        android:textColor="#646464"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:background="#bcbcbc" />
+
+    <RelativeLayout
+        android:id="@+id/ilong_pay_result_success"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/ilong_pay_resule_statu_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ilong_pay_result_success" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="购买成功"
+                android:textColor="#3cb878"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ilong_pay_result_order_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ilong_pay_resule_statu_success"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="火拉币余额：0"
+            android:textColor="#bcbcbc"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ilong_pay_result_fail_pay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp" >
+
+        <LinearLayout
+            android:id="@+id/ilong_pay_resule_statu_fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/ilong_pay_result_fail" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="支付失败，请返回游戏重新下单"
+                android:textColor="#ed796d"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/ilong_pay_result_order_info_fail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ilong_pay_resule_statu_fail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textColor="#898989"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/ilong_pay_result_fail_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="  购买游戏道具未成功，您的充值金额已经充值到您的火拉币余额，请重新进行道具购买，若火拉币10分钟未到账请联系客服：18300673537"
+        android:textColor="#898989"
+        android:autoLink="phone"
+        android:textSize="16sp"
+        />
+
+    <Button
+        android:id="@+id/ilong_pay_result_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/ilong_square_bottom_radiu_green"
+        android:text="返 回 游 戏"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>

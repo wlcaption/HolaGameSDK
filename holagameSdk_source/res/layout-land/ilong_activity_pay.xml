@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/ilong_activity_pay_title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="#1997dd" >
+
+        <ImageButton
+            android:id="@+id/ilong_activity_pay_back"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            android:padding="20dp"
+            android:src="@drawable/ilong_activity_pay_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="支付中心"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/ilong_activity_pay_mode"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+              android:focusable="true"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/ilong_activity_pay_alipay_rl"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/p_land_pay_view_selector" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="支付宝支付"
+                    android:textColor="@drawable/p_land_pay_world_selector"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#D4D4D4" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ilong_activity_pay_union_rl"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/p_land_pay_view_selector" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="微信支付"
+                    android:textColor="@drawable/p_land_pay_world_selector"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#D4D4D4" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ilong_activity_pay_ten_rl"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/p_land_pay_view_selector" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="财付通支付"
+                    android:textColor="@drawable/p_land_pay_world_selector"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#D4D4D4" />
+            </RelativeLayout>
+            
+            <RelativeLayout
+                android:id="@+id/ilong_activity_pay_weixin_rl"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/p_land_pay_view_selector" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="火拉支付"
+                    android:textColor="@drawable/p_land_pay_world_selector"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignParentBottom="true"
+                    android:background="#D4D4D4" />
+            </RelativeLayout>
+            
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <LinearLayout
+                android:id="@+id/ilong_activity_pay_message"
+                android:layout_width="fill_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/white"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:padding="10dp"
+                    android:src="@drawable/ilong_activity_pay_horn" />
+
+                <TextView
+                    android:id="@+id/ilong_activity_pay_context"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:paddingRight="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="各种消息各种消息各种消息各种消息各种消息号外号外号外号外"
+                    android:textColor="#ff722c"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/ilong_activity_pay_order_number"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_below="@id/ilong_activity_pay_message"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ilong_square_radius" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" >
+
+                    <TextView
+                        android:id="@+id/ilong_order_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单金额  : 0.0元"
+                        android:textColor="#202020"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/ilong_activity_pay_common_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@id/ilong_order_number"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@id/ilong_order_number"
+                        android:text="商  品 : 20钻石"
+                        android:textColor="#202020"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/ilong_activity_pay_ly"
+                android:layout_width="fill_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/ilong_activity_pay_order_number"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ilong_acitivity_pay_ly_bg" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/ilong_activity_pay_ly_choose"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ilong_activity_pay_ly_sure" />
+
+                    <TextView
+                        android:id="@+id/ilong_activity_pay_ly_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="使用火拉币：  0"
+                        android:textColor="#202020"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/ilong_activity_pay_ly_refresh"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="20dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ilong_acitivity_refresh" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/ilong_activity_prompt_coin"
+                android:layout_below="@id/ilong_activity_pay_ly"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="#202020"
+                android:gravity="center"
+                android:text="火拉币充足，可使用火拉币支付" />
+
+            <Button
+                android:id="@+id/ilong_activity_pay_goto"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="#1997dd"
+                android:text="还需支付10元，去支付"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

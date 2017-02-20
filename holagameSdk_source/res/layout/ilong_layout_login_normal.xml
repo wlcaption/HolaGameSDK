@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ilong_square_radius"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent" >
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="31dip"
+                android:layout_height="35dip"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="?attr/sdk_logo" />
+
+            <TextView
+                style="@style/ilong_dialog_logo_layout_text"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/imageView1"
+                android:text="?attr/sdk_login_title_name" />
+
+            <Button
+                android:id="@+id/ilong_close"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/ilong_close" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="?attr/sdk_buttom_line" />
+
+        <LinearLayout
+            android:layout_width="320dip"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:background="?attr/sdk_ilong_radius_bg"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp" >
+
+                    <ImageView
+                        android:id="@+id/name_icon"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_centerVertical="true"
+                        android:padding="12dp"
+                        android:src="?attr/sdk_name_icon" />
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/name_icon"
+                        android:background="#bdbdbd" />
+
+                    <EditText
+                        android:id="@+id/ilong_username_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="1px"
+                        android:layout_toRightOf="@id/name_icon"
+                        android:background="@null"
+                        android:hint="用户名/手机号"
+                        android:maxLength="20"
+                        android:paddingLeft="12dp"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+
+                    <ImageButton
+                        android:id="@+id/ilong_more_userinfo"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@android:color/transparent"
+                        android:paddingBottom="10dp"
+                        android:paddingTop="10dp"
+                        android:src="?attr/sdk_login_more_userinfo" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="?attr/sdk_buttom_line" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp" >
+
+                    <ImageView
+                        android:id="@+id/p_icon"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_centerVertical="true"
+                        android:padding="12dp"
+                        android:src="?attr/sdk_p_lock" />
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/p_icon"
+                        android:background="#bdbdbd" />
+
+                    <EditText
+                        android:id="@+id/ilong_password_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginLeft="1px"
+                        android:layout_toRightOf="@id/p_icon"
+                        android:background="@null"
+                        android:hint="输入密码"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLength="16"
+                        android:paddingLeft="12dp"
+                        android:singleLine="true"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <Button
+                    android:id="@+id/ilong_go_into_game_btn"
+                    style="@style/ilong_btn_go_into"
+                    android:layout_width="match_parent"
+                    android:text="登 录" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dip" >
+
+                <TextView
+                    android:id="@+id/forget_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dip"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="忘记密码?"
+                    android:textColor="?attr/sdk_textColor" />
+
+                <TextView
+                    android:id="@+id/fast_reg_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dip"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="快速注册>"
+                    android:textColor="?attr/sdk_textColor" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

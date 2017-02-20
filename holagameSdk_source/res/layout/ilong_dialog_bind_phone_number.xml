@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ilong_square_radius"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp" >
+
+            <ImageView
+                android:id="@+id/ilong__logo"
+                android:layout_width="31dip"
+                android:layout_height="35dip"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ilong_logo" />
+
+            <TextView
+                style="@style/ilong_dialog_logo_layout_text"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/ilong__logo"
+                android:text="绑定手机号" />
+
+            <Button
+                android:id="@+id/ilong_close"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/ilong_close" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/new_login_blue_textcolor" />
+
+        <LinearLayout
+            android:id="@+id/ilong_bind_phone_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ilong_radius_white_bg"
+            android:orientation="vertical"
+            android:paddingRight="10dp" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp" >
+
+                <ImageView
+                    android:id="@+id/bind_phone_name_icon"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_centerVertical="true"
+                    android:padding="12dp"
+                    android:src="@drawable/ilong_icon_phone" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/bind_phone_name_icon"
+                    android:background="#bdbdbd" />
+
+                <EditText
+                    android:id="@+id/ilong_bind_phone_usernme"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="1px"
+                    android:layout_toRightOf="@id/bind_phone_name_icon"
+                    android:background="@null"
+                    android:hint="请输入手机号"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/new_login_blue_textcolor" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp" >
+
+                <ImageView
+                    android:id="@+id/p_icon"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_centerVertical="true"
+                    android:padding="12dp"
+                    android:src="@drawable/ilong_regist_verification_code" />
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/p_icon"
+                    android:background="#bdbdbd" />
+
+                <EditText
+                    android:id="@+id/ilong_v_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="1px"
+                    android:layout_toRightOf="@id/p_icon"
+                    android:background="@null"
+                    android:gravity="center_vertical|left"
+                    android:hint="输入验证码"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:paddingLeft="12dp"
+                    android:singleLine="true"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/ilong_get_verif_button"
+                    android:layout_width="100dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ilong_btn_go_into"
+                    android:focusable="false"
+                    android:gravity="center"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="获取验证码"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/ilong_onkey_bind_phone_finished"
+            style="@style/ilong_btn_go_into"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="立 即 绑 定 " />
+
+        <Button
+            android:id="@+id/iong_bing_phone_never_show"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="不再提醒"
+            android:textColor="#8E8E8E"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

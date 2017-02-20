@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ilong_square_radius" >
+
+    <RelativeLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:id="@+id/security_message_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="?attr/sdk_account_security_context"
+            android:textColor="#9D9D9D"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/security_sure"
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/security_message_tv"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/ilong_security_sure"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

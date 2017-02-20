@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/ly_pay_head_height"
+    android:orientation="horizontal" >
+    
+    <RelativeLayout 
+        android:id="@+id/ly_pay_head_back_btn"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/ly_pay_head_item_padding"
+        android:paddingRight="@dimen/ly_pay_head_item_padding"
+        android:layout_weight="3"
+        >
+        <ImageView 
+            android:layout_width="@dimen/ly_pay_head_back_iv_width"
+            android:layout_height="@dimen/ly_pay_head_back_iv_height"
+            android:layout_centerVertical="true"
+            android:src="@drawable/pay_ic_back"
+            />
+    </RelativeLayout>
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        >
+        <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:textSize="@dimen/ly_pay_head_title_size"
+        android:text="@string/ly_pay_head_title_text"
+        />
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/ly_pay_head_item_padding"
+        android:paddingRight="@dimen/ly_pay_head_item_padding"
+        android:layout_weight="3"
+        >
+    </RelativeLayout>
+    
+</LinearLayout>

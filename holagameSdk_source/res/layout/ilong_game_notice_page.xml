@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center" >
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="330dp"
+        android:layout_marginLeft="-50dp" >
+
+        <ImageView
+            android:id="@+id/ilong_notice_page_context_bg_yellow"
+            android:layout_width="300dp"
+            android:layout_height="280dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ilong_notice_page_bg_yellow" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ilong_notice_context_message"
+        android:layout_width="300dp"
+        android:layout_height="330dp" >
+
+        <RelativeLayout
+            android:id="@+id/ilong_notice_close_rl"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true" >
+
+            <Button
+                android:id="@+id/ilong_notice_close_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ilong_notice_close_bt" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/ilong_notice_close_bt"
+                android:layout_centerHorizontal="true"
+                android:background="#ffc32d" />
+        </RelativeLayout>
+
+        <ImageView
+            android:scaleType="fitXY"
+            android:id="@+id/ilong_notice_page_iv"
+            android:layout_width="300dp"
+            android:layout_height="280dp"
+            android:src="@drawable/ilong_notice_default_bg"
+            android:layout_below="@id/ilong_notice_close_rl" >
+
+        </ImageView>
+    </RelativeLayout>
+
+</RelativeLayout>

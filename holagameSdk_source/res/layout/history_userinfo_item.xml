@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/history_item_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="?attr/sdk_buttom_line" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="1px"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/userinfo_time_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="UserName"
+            android:textColor="#ADADAD"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/userinfo_time_lastlogintime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:text="LastLoginTime 2016/4/12 3:20"
+            android:textColor="#ADADAD"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/userinfo_clear"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ilong_close" />
+
+</RelativeLayout>

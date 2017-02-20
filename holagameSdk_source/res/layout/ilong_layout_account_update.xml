@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:gravity="center" >
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="320dip"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ilong_login_bg"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal" >
+
+                <ImageView
+                    android:id="@+id/account_updata_logo"
+                    android:layout_width="31dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:background="?attr/sdk_logo" />
+
+                <TextView
+                    android:id="@+id/ilong_regist_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/account_updata_logo"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="账号升级"
+                    android:textColor="?attr/sdk_textColor"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/ilong_close"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/ilong_close" />
+
+                <Button
+                    android:id="@+id/ilong_update_switch_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:layout_toLeftOf="@id/ilong_close"
+                    android:background="@android:color/transparent"
+                    android:drawableLeft="?attr/sdk_switch_account_ico"
+                    android:drawablePadding="5dp"
+                    android:gravity="center"
+                    android:text="切换账号"
+                    android:textColor="?attr/sdk_textColor"
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2px"
+                android:background="?attr/sdk_buttom_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:id="@+id/ilong_reg_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="?attr/sdk_ilong_radius_bg"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp" >
+
+                            <ImageView
+                                android:id="@+id/name_icon"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_centerVertical="true"
+                                android:padding="12dp"
+                                android:src="?attr/sdk_phone_ico" />
+
+                            <View
+                                android:layout_width="1px"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/name_icon"
+                                android:background="#bdbdbd" />
+
+                            <EditText
+                                android:id="@+id/ilong_reg_usernme"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_marginLeft="1px"
+                                android:layout_toRightOf="@id/name_icon"
+                                android:background="@null"
+                                android:hint="请输入11位手机号"
+                                android:imeOptions="actionNext"
+                                android:inputType="phone"
+                                android:maxLength="11"
+                                android:paddingLeft="12dp"
+                                android:singleLine="true"
+                                android:textColorHint="#bebebe"
+                                android:textSize="14sp" />
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="?attr/sdk_buttom_line" />
+
+                        <RelativeLayout
+                            android:id="@+id/code_ry"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp" >
+
+                            <ImageView
+                                android:id="@+id/p_icon"
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:layout_centerVertical="true"
+                                android:padding="12dp"
+                                android:src="?attr/sdk_verification_code" />
+
+                            <View
+                                android:layout_width="1px"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@id/p_icon"
+                                android:background="#bdbdbd" />
+
+                            <EditText
+                                android:id="@+id/v_edittext"
+                                android:layout_width="match_parent"
+                                android:layout_height="44dp"
+                                android:layout_marginLeft="1px"
+                                android:layout_toRightOf="@id/p_icon"
+                                android:background="@null"
+                                android:hint="请输入验证码"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLength="6"
+                                android:paddingLeft="12dp"
+                                android:singleLine="true"
+                                android:textColorHint="#bebebe"
+                                android:textSize="14sp" />
+
+                            <Button
+                                android:id="@+id/get_verif_button"
+                                android:layout_width="100dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="10dp"
+                                style="@style/ilong_btn_go_into"
+                                android:focusable="false"
+                                android:gravity="center"
+                                android:text="获取验证码"
+                                 android:textSize="14sp"
+                                android:textColor="@android:color/white" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="?attr/sdk_buttom_line" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp" >
+
+                        <ImageView
+                            android:id="@+id/v_icon"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_centerVertical="true"
+                            android:padding="12dp"
+                            android:src="?attr/sdk_p_lock" />
+
+                        <View
+                            android:layout_width="1px"
+                            android:layout_height="30dp"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/v_icon"
+                            android:background="#bdbdbd" />
+
+                        <EditText
+                            android:id="@+id/ilong_reg_pwd"
+                            android:layout_width="match_parent"
+                            android:layout_height="44dp"
+                            android:layout_marginLeft="1px"
+                            android:layout_toRightOf="@id/v_icon"
+                            android:background="@null"
+                            android:hint="请输入密码"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLength="16"
+                            android:paddingLeft="12dp"
+                            android:singleLine="true"
+                            android:textColorHint="#bebebe"
+                            android:textSize="14sp" />
+
+                        <ImageButton
+                            android:id="@+id/ilong_close_eye_bt"
+                            android:layout_width="44dp"
+                            android:layout_height="44dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ilong_close_eye" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+<!--                 <ProgressBar -->
+<!--                     android:id="@+id/ilong_progress_login" -->
+<!--                     android:layout_width="25dp" -->
+<!--                     android:layout_height="25dp" -->
+<!--                     android:layout_centerInParent="true" -->
+<!--                     android:indeterminateDrawable="@drawable/ilong_login_loading_blue" -->
+<!--                     android:visibility="gone" /> -->
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/ilong_update_user_confirm"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0"
+                style="@style/ilong_btn_go_into"
+                android:text="立 刻 升 级"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/change_updata_method"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="切换升级方式"
+                    android:textColor="?attr/sdk_textColor"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="?attr/sdk_accountupdata_right_arrow" />
+
+                <ImageView
+                    android:id="@+id/updata_method_icon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:src="?attr/sdk_accountupdata_urserlogo" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

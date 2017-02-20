@@ -1,0 +1,21 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="pading_frame_icon">10dp</dimen>
+    <dimen name="width_toolbar">47dp</dimen>
+    <dimen name="width_toolbar_two">97dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="world_big">20sp</dimen>
+    <dimen name="world_mid">18sp</dimen>
+    <dimen name="world_small">14sp</dimen>
+    
+    <dimen name="float_close_circle_ly_w">140dp</dimen>
+    <dimen name="float_close_circle_ly_h">100dp</dimen>
+    <dimen name="float_close_circle_size">80dp</dimen>
+    <dimen name="float_circle_size">48dp</dimen>
+
+</resources>

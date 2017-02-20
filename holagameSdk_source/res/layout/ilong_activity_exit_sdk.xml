@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#33ffffff" >
+
+    <!-- <include layout="@layout/ilong_layout_exitsdk" / -->
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/ilong_square_radius"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/title_bar"
+            android:layout_width="280dp"
+            android:layout_height="44dp"
+            android:gravity="center_vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="要退出游戏吗？"
+                android:textColor="#3C3C3C"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/exit_close"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ilong_close" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="280dp"
+            android:layout_height="1px"
+            android:background="#b4b4b4" />
+
+        <RelativeLayout
+            android:layout_width="280dp"
+            android:layout_height="150dp" >
+            <ImageView 
+                android:id="@+id/ilong_exit_context"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="280dp"
+            android:layout_height="44dp"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/ilong_exit_sdk_out_btn"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="@drawable/ilong_exit_tourist"
+                android:gravity="center"
+                android:text="退出游戏"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/ilong_exit_sdk_continue_btn"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="?attr/sdk_textColor"
+                android:gravity="center"
+                android:text="立刻升级"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

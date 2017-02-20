@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/ilong_auto_login_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <include layout="@layout/ilong_layout_loading" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/full_contianer"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:id="@+id/ilong_dialog_container"
+            style="@style/ilong_dialog_container_frame_landscape"
+            android:background="@drawable/ilong_square_radius" >
+        </FrameLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,145 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qianhuan.yxgsd.holagamesdk"
+    android:versionCode="391"
+    android:versionName="3.9.1" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<uses-permission android:name="android.permission.GET_TASKS" /> 
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="holasdk"
+     
+        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
+        <activity
+            android:name="com.qianhuan.yxgsd.holagamesdk.MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
+           >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.longyuan.sdkdemo.TestCoupon" >
+        </activity>
+        <!-- 将以下配置copy到AndroidManifest -->
+
+
+        <!-- 请配置火拉平台分配的APPID -->
+        <meta-data android:name="LONGYUAN_APPID" android:value="22c51853df2cd8fc" />
+
+        <activity
+            android:name="com.holagame.sdk.ac.ActivityWeb"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.holagames.xcds.ac.SdkLoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.holagames.xcds.ac.ExitSDKActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.holagames.xcds.ac.ActivityUser"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.holagames.xcds.ac.ActivityBindPhone"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+            android:name="com.holagames.xcds.ac.ActivityUpdateAccount"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+
+        <!-- 支付相关 -->
+        <activity
+            android:name="com.holagames.xcds.pay.LyPayActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" >
+        </activity>
+        <!-- alipay sdk end -->
+        
+        <!-- weixinpay sdk begin -->
+        <activity 
+            android:name="com.holagames.xcds.pay.weixinpay.LyWeixinPay"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" 
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="wx78062e368f7becbb"/>
+            </intent-filter>
+            
+        </activity>
+        <!-- weixinpay sdk end -->
+
+        <activity android:name="com.unionpay.uppay.PayActivity" />
+        <activity
+            android:name="com.longyuan.sdk.pay.tenpay.LyCftPayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
+        </activity>
+        <!-- end支付相关 -->
+        <service
+            android:name="com.holagames.xcds.gamecenter.FloatViewService"
+         	android:configChanges="orientation|keyboardHidden"
+            android:exported="true" >
+             <intent-filter>  
+                <action android:name="com.longyuan.sdk.gamecenter" />  
+            </intent-filter> 
+        </service>
+
+        <activity
+            android:name="com.holagames.xcds.ac.ActivityGameNoticePage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        
+        <receiver
+            android:name="com.holagames.xcds.pay.weixinpay.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- 将以上配置copy到AndroidManifest -->
+    </application>
+
+</manifest>

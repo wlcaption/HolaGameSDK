@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+     <solid android:color="@android:color/white" />
+    <corners
+        android:bottomLeftRadius="4dip"
+        android:bottomRightRadius="4dip"
+        android:topLeftRadius="4dip"
+        android:topRightRadius="4dip" />
+
+</shape>
+<!-- 这是一个白色背景，每个为4个dip的圆角背景 -->

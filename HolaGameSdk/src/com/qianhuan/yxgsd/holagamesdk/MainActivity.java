@@ -37,6 +37,7 @@ import com.qianhuan.yxgsd.holagamesdk.tools.http.RespModel;
 import com.qianhuan.yxgsd.holagamesdk.tools.http.SdkJsonReqHandler;
 
 /**
+ * sdk入口activity
  * @author 小魏 
  * @Email: wlcaption@gmail.com
  * 2017-2-13 下午5:10:29

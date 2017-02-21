@@ -75,7 +75,7 @@ public class LyAlipay {
 				// 构造PayTask 对象
 				PayTask alipay = new PayTask(mContext);
 				// 调用支付接口，获取支付结果
-				String result = alipay.pay(pay_info);
+				String result = alipay.pay(pay_info,true);
 
 				Message msg = new Message();
 				msg.what = SDK_PAY_FLAG;
@@ -93,27 +93,27 @@ public class LyAlipay {
 	 * check whether the device has authentication alipay account.
 	 * 查询终端设备是否存在支付宝认证账户
 	 */
-	public void check(View v) {
-		Runnable checkRunnable = new Runnable() {
-
-			@Override
-			public void run() {
-				// 构造PayTask 对象
-				PayTask payTask = new PayTask(mContext);
-				// 调用查询接口，获取查询结果
-				boolean isExist = payTask.checkAccountIfExist();
-
-				Message msg = new Message();
-				msg.what = SDK_CHECK_FLAG;
-				msg.obj = isExist;
-				mHandler.sendMessage(msg);
-			}
-		};
-
-		Thread checkThread = new Thread(checkRunnable);
-		checkThread.start();
-
-	}
+//	public void check(View v) {
+//		Runnable checkRunnable = new Runnable() {
+//
+//			@Override
+//			public void run() {
+//				// 构造PayTask 对象
+//				PayTask payTask = new PayTask(mContext);
+//				// 调用查询接口，获取查询结果
+//				//boolean isExist = payTask.checkAccountIfExist();
+//
+//				Message msg = new Message();
+//				msg.what = SDK_CHECK_FLAG;
+//				msg.obj = isExist;
+//				mHandler.sendMessage(msg);
+//			}
+//		};
+//
+//		Thread checkThread = new Thread(checkRunnable);
+//		checkThread.start();
+//
+//	}
 
 	/**
 	 * get the sdk version. 获取SDK版本号

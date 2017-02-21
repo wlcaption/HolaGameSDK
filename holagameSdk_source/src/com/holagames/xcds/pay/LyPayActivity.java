@@ -39,6 +39,7 @@ import com.holagames.xcds.modle.OrderNumber;
 import com.holagames.xcds.modle.PayActivities;
 import com.holagames.xcds.modle.RespModel;
 import com.holagames.xcds.modle.UserInfo;
+import com.holagames.xcds.pay.alipay.HolaAlipay;
 import com.holagames.xcds.pay.alipay.LyAlipay;
 import com.holagames.xcds.pay.tenpay.LyCftPayActivity;
 import com.holagames.xcds.pay.uppay.LyUPPay;
@@ -545,7 +546,9 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		//已经生成订单号
 		switch (orderType) {
 			case 0:
-				aliyPay(pay_info);
+				//aliyPay(pay_info);
+				aliPay(pay_info);
+				
 				break;
 			case 1:
 				//微信支付
@@ -581,11 +584,21 @@ public class LyPayActivity extends Activity implements OnClickListener{
 //		}
 //		weixinPay.pay(pay_info);
 //	}
+	
+	private HolaAlipay holaAlipay;
+	
+	private void aliPay(String pay_info){
+		if(holaAlipay == null){
+			holaAlipay = new HolaAlipay(this, lyPayResult);
+		}
+		holaAlipay.payV2(pay_info);
+	}
+	
 	private LyAlipay alipay;
 	/**
 	 * 支付宝支付
 	 */
-	private void aliyPay(String pay_info) {
+	private void aliyPay1(String pay_info) {
 		if (alipay == null) {
 			alipay = new LyAlipay(this, lyPayResult);
 		}

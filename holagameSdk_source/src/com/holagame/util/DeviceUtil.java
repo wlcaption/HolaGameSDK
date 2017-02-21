@@ -49,7 +49,6 @@ import android.util.TypedValue;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.alipay.android.phone.mrpc.core.ac;
 import com.holagames.xcds.IlongSDK;
 import com.holagames.xcds.modle.UserXML;
 import com.holagames.xcds.tools.IdcardValidatorTool;

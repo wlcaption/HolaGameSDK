@@ -1,6 +1,6 @@
 package com.holagame.util;
 
-import com.holagames.xcds.IlongSDK;
+import com.qianhuan.yxgsd.holagames.IlongSDK;
 
 import android.util.Log;
 

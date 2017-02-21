@@ -48,42 +48,42 @@
         <meta-data android:name="LONGYUAN_APPID" android:value="22c51853df2cd8fc" />
 
         <activity
-            android:name="com.holagame.sdk.ac.ActivityWeb"
+            android:name="com.qianhuan.yxgsd.holagames.ac.ActivityWeb"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name="com.holagames.xcds.ac.SdkLoginActivity"
+            android:name="com.qianhuan.yxgsd.holagames.ac.SdkLoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="adjustPan" >
         </activity>
         <activity
-            android:name="com.holagames.xcds.ac.ExitSDKActivity"
+            android:name="com.qianhuan.yxgsd.holagames.ac.ExitSDKActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name="com.holagames.xcds.ac.ActivityUser"
+            android:name="com.qianhuan.yxgsd.holagames.ac.ActivityUser"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name="com.holagames.xcds.ac.ActivityBindPhone"
+            android:name="com.qianhuan.yxgsd.holagames.ac.ActivityBindPhone"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name="com.holagames.xcds.ac.ActivityUpdateAccount"
+            android:name="com.qianhuan.yxgsd.holagames.ac.ActivityUpdateAccount"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
         </activity>
 
         <!-- 支付相关 -->
         <activity
-            android:name="com.holagames.xcds.pay.LyPayActivity"
+            android:name="com.qianhuan.yxgsd.holagames.pay.LyPayActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
         </activity>
         <!-- alipay sdk begin -->
@@ -98,7 +98,7 @@
         
         <!-- weixinpay sdk begin -->
         <activity 
-            android:name="com.holagames.xcds.pay.weixinpay.LyWeixinPay"
+            android:name="com.qianhuan.yxgsd.holagames.pay.weixinpay.LyWeixinPay"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" 
             >
             <intent-filter>
@@ -112,13 +112,13 @@
 
         <activity android:name="com.unionpay.uppay.PayActivity" />
         <activity
-            android:name="com.longyuan.sdk.pay.tenpay.LyCftPayActivity"
+            android:name="com.qianhuan.yxgsd.holagames.pay.tenpay.LyCftPayActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
         </activity>
         <!-- end支付相关 -->
         <service
-            android:name="com.holagames.xcds.gamecenter.FloatViewService"
+            android:name="com.qianhuan.yxgsd.holagames.gamecenter.FloatViewService"
          	android:configChanges="orientation|keyboardHidden"
             android:exported="true" >
              <intent-filter>  
@@ -127,13 +127,13 @@
         </service>
 
         <activity
-            android:name="com.holagames.xcds.ac.ActivityGameNoticePage"
+            android:name="com.qianhuan.yxgsd.holagames.ac.ActivityGameNoticePage"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
         </activity>
         
         <receiver
-            android:name="com.holagames.xcds.pay.weixinpay.AppRegister">
+            android:name="com.qianhuan.yxgsd.holagames.pay.weixinpay.AppRegister">
             <intent-filter>
                 <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
             </intent-filter>

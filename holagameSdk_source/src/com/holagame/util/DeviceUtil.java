@@ -49,11 +49,11 @@ import android.util.TypedValue;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
-import com.holagames.xcds.IlongSDK;
-import com.holagames.xcds.modle.UserXML;
-import com.holagames.xcds.tools.IdcardValidatorTool;
-import com.holagames.xcds.tools.UserNameValidatorTool;
-import com.holagames.xcds.tools.http.Constant;
+import com.qianhuan.yxgsd.holagames.IlongSDK;
+import com.qianhuan.yxgsd.holagames.modle.UserXML;
+import com.qianhuan.yxgsd.holagames.tools.IdcardValidatorTool;
+import com.qianhuan.yxgsd.holagames.tools.UserNameValidatorTool;
+import com.qianhuan.yxgsd.holagames.tools.http.Constant;
 
 public class DeviceUtil {
 	public static final String DATA_FIELD = "filed_user";

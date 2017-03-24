@@ -1,6 +1,5 @@
 # HolaGameSDK
-###Hello
-#### Second
 #### git push origin -u master
-#### 看看修改了什么
-#### false1
+#### 2017-3-24 完成短信注册、用户注册，向SDK中接入了支付宝、微信支付。
+####下一步，完成悬浮框中的个人中心
+

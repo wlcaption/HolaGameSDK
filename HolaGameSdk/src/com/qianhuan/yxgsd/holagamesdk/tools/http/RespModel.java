@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * 响应模型
- * @author niexiaoqiang
+ * 
  */
 public class RespModel implements Serializable {
 	//{"data":{"update":0,"kf":0},"errinfo":"","errno":200}

@@ -57,7 +57,7 @@ public class ActivityWeb extends BaseActivity implements WebCall{
 	/**传递过来的mUserInfo的id*/
 	private String id  = "";
 	/**微信APPID*/
-	public static  String ILONGYUAN_WX_APPID = ""; 
+	public static  String ILONGYUAN_WX_APPID = "";
 	/**IWAPI 是第三方app和微信通信的openapi接口*/
 //	private IWXAPI api;
 	/**微信支付 朋友圈的最低版本*/
@@ -211,8 +211,7 @@ public class ActivityWeb extends BaseActivity implements WebCall{
 		web.setWebChromeClient(new MyWebChromeClient(this){
 
 			@Override
-			public boolean onJsAlert(WebView view, String url, String message,
-					final JsResult result) {
+			public boolean onJsAlert(WebView view, String url, String message,final JsResult result) {
 				final AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
 				builder.setTitle("温馨提示").
 				setMessage(message).setCancelable(false).

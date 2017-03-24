@@ -312,7 +312,7 @@ public class Constant {
 	private static final int ERRNO_API_ERROR = 104; // 接口错误
 	private static final int API_ERR_GAME = 105; // 游戏APPID信息错误
 	public static final int API_ERR_USERNAME=106;
-	public static final int API_ERR_SMS = 107; // 短信发送错误
+	public static final int API_ERR_SMS = 007; // 短信发送错误
 	// 300 是登录相关代码
 	private static final int ERRNO_NO_USER = 300; // 用户不存在
 	private static final int ERRNO_PASSWORD_ERROR = 301; // 密码错误
@@ -325,8 +325,8 @@ public class Constant {
 	private static final int ERRNO_CODE_EXPIRED = 308; // auth_code过期失效
 	private static final int ERRNO_TOKEN_ERROR = 309; // access_token错误或者不存在不匹配
 	private static final int ERRNO_TOKEN_EXPIRED = 310; // access_token过期失效
-	public static final int ERRNO_MOBILE_EXISTS = 311; // 用户已经绑定了手机号
-	public static final int ERRNO_SMSCODE_ERROR = 312; // 手机验证码错误
+	public static final int ERRNO_MOBILE_EXISTS = 015; // 用户已经绑定了手机号
+	public static final int ERRNO_SMSCODE_ERROR = 006; // 手机验证码错误
 	public static final int ERRNO_Conpon_Error = 314;         //玩家代金券无效
 	public static final int ERRNO_SMSCODE_ERROR_315 = 315; // 支付密码错误
 	private static final int API_ERR_NO_PAY_PASSWORD = 316; // 未设置支付密码

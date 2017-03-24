@@ -322,7 +322,7 @@ public class SdkLoginActivity extends BaseActivity {
 					userinfo = makeUserInfo(Constant.TYPE_USER_NORMAL, username, password); //加密操作
 				} catch (Exception e) {
 					e.printStackTrace();
-					Toast.makeText(SdkLoginActivity.this, "登录失败", Toast.LENGTH_LONG).show();
+					Toast.makeText(SdkLoginActivity.this, "登录失败_error", Toast.LENGTH_LONG).show();
 					return;
 				}
 				map.put(Constant.KEY_DATA_CONTENT, userinfo);
@@ -628,15 +628,18 @@ public class SdkLoginActivity extends BaseActivity {
 	 */
 	public void register(final String phone, final String password, final String verify_code) {
 		showProgressDialog();
-		String url = Constant.httpHost + Constant.USER_REGISTER_MOBILE;
-		//String url = "http://139.129.21.196/hola_sdk_server/register.php"
+//		String url = Constant.httpHost + Constant.USER_REGISTER_MOBILE;
+		String url = "http://139.129.21.196/hola_sdk_server/register.php";
 		Map<String, Object> params = new HashMap<String, Object>(0);
-		params.put("client_id", IlongSDK.getInstance().getAppId());
-		params.put("pack_key", IlongSDK.getInstance().getSid());
-		params.put("mobile", phone);
+		params.put("cellphone", phone);
 		params.put("password", password);
-		params.put("code", verify_code);
-		HttpUtil.newHttpsIntance(SdkLoginActivity.this).httpsPostJSON(SdkLoginActivity.this, url, params, new SdkJsonReqHandler(params) {
+		params.put("check_num", verify_code);
+//		params.put("client_id", IlongSDK.getInstance().getAppId());
+//		params.put("pack_key", IlongSDK.getInstance().getSid());
+//		params.put("mobile", phone);
+//		params.put("password", password);
+//		params.put("code", verify_code);
+		HttpUtil.newHttpsIntance(SdkLoginActivity.this).httpsPost(SdkLoginActivity.this, url, params, new SdkJsonReqHandler(params) {
 
 			@Override
 			public void ReqYes(Object reqObject, final String content) {
@@ -703,15 +706,17 @@ public class SdkLoginActivity extends BaseActivity {
 		}
 		showProgressDialog();
 		get_verif_button.setEnabled(false);
-		String url = Constant.httpHost + Constant.USER_REG_SMS;
+		//String url = Constant.httpHost + Constant.USER_REG_SMS;
+		String url = "http://139.129.21.196/hola_sdk_server/register_check_num.php";
 		Map<String, Object> params = new HashMap<String, Object>(0);
-		params.put("client_id", IlongSDK.getInstance().getAppId());
-		params.put("pack_key", IlongSDK.getInstance().getSid());
-		params.put("is_demo", 0);
-		params.put("mobile", phone);
+		params.put("cellphone", phone);
+//		params.put("client_id", IlongSDK.getInstance().getAppId());
+//		params.put("pack_key", IlongSDK.getInstance().getSid());
+//		params.put("is_demo", 0);
+//		params.put("mobile", phone);
 		Logd.d(TAG, "手机验证码params:" + params.toString());
 		
-		HttpUtil.newHttpsIntance(SdkLoginActivity.this).httpsPostJSON(SdkLoginActivity.this, url, params, new SdkJsonReqHandler(params) {
+		HttpUtil.newHttpsIntance(SdkLoginActivity.this).httpsPost(SdkLoginActivity.this, url, params, new SdkJsonReqHandler(params) {
 
 			@Override
 			public void ReqYes(Object reqObject, final String content) {

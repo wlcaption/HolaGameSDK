@@ -68,7 +68,7 @@ import com.qianhuan.yxgsd.holagames.tools.http.SdkJsonReqHandler;
 
 /**
  * SDK
- * @author niexiaoqiang
+ * @author xiaowei
  */
 public class IlongSDK implements IlongGame {
 	public static boolean ISLONG = true;
@@ -120,7 +120,8 @@ public class IlongSDK implements IlongGame {
 	}
 
 	public void updateUserInfo(Context context, final String token, final IToken2UserInfo iToken2UserInfo) {
-		String url = Constant.httpHost + Constant.USER_DETAIL;
+		//String url = Constant.httpHost + Constant.USER_DETAIL;
+		String url = "http://139.129.21.196/hola_sdk_server/uid.php";
 		Map<String, Object> params = new HashMap<String, Object>(0);
 		params.put("access_token", token);
 //		Log.d("gst", "updateUserInfo()中的url-->"+url+"token:"+token);

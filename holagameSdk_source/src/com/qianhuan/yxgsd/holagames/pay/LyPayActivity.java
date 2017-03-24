@@ -3,6 +3,8 @@ package com.qianhuan.yxgsd.holagames.pay;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.json.JSONException;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -22,6 +24,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -43,7 +46,8 @@ import com.qianhuan.yxgsd.holagames.pay.alipay.HolaAlipay;
 import com.qianhuan.yxgsd.holagames.pay.alipay.LyAlipay;
 import com.qianhuan.yxgsd.holagames.pay.tenpay.LyCftPayActivity;
 import com.qianhuan.yxgsd.holagames.pay.uppay.LyUPPay;
-import com.qianhuan.yxgsd.holagames.pay.weixinpay.LyWeixinPay;
+import com.qianhuan.yxgsd.holagames.pay.weixinpay.WXPay;
+import com.qianhuan.yxgsd.holagames.pay.weixinpay.WXPay.WXPayResultCallBack;
 import com.qianhuan.yxgsd.holagames.tools.IlongCode;
 import com.qianhuan.yxgsd.holagames.tools.Json;
 import com.qianhuan.yxgsd.holagames.tools.LogUtils;
@@ -59,8 +63,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	public static final String M_ALIPAY = "支付宝";
 	public static final String M_TEN = "财付通";
 	public static final String M_UNIN = "银联";
-	public static final String m_WECHATPAY = "微信";
-	public static final String M_LONGYUAN = "火拉币";
+	public static final String M_LONGYUAN = "龙渊币";
 	public static final String M_HRPAY = "浩然币";
 	private float ly_amount = 0f;
 	private String product_name = "";
@@ -77,7 +80,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	private String Tag = this.getClass().getSimpleName();
 	private View messageLayout;//消息布局
 	private View orderNumberLayout;//订单信息
-	private View lyCurrencyLayout;//火拉币详情
+	private View lyCurrencyLayout;//龙渊币详情
 	private View payModeLayout;//支付方式
 	private Button pay_bt;//支付
 	
@@ -88,16 +91,15 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	private TextView order_number_tv;//订单金额
 	private TextView common_number_tv;//商品信息
 	
-	private TextView ly_number_info_tv;//火拉币信息
-	private ImageView choose_ly_bt;//选择火拉币
-	private ImageView ly_number_refresh;//刷新火拉币
+	private TextView ly_number_info_tv;//龙渊币信息
+	private ImageView choose_ly_bt;//选择龙渊币
+	private ImageView ly_number_refresh;//刷新龙渊币
 	
-	private TextView coin_full_pormpt;//火拉币足够提示
+	private TextView coin_full_pormpt;//龙渊币足够提示
 	
 	private View alipay_mode_rl;
 	private View union_mode_rl;
 	private View ten_mode_rl;
-	private View weixin_mode_rl;
 	
 	private LyPayPassworldDialog lyPayPassworld;
 	private ProgressDialog orderDialog;
@@ -122,7 +124,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		InitScreen(); 
 		InitView();
 		InitData();
-		updataUserInfo(false,0);//刷新火拉币金额
+		updataUserInfo(false,0);//刷新龙渊币金额
 	}
 
 	/**
@@ -160,7 +162,6 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		alipay_mode_rl = (View) findViewById(ResUtil.getId(this, "ilong_activity_pay_alipay_rl"));
 		union_mode_rl = (View) findViewById(ResUtil.getId(this, "ilong_activity_pay_union_rl"));
 		ten_mode_rl = (View) findViewById(ResUtil.getId(this, "ilong_activity_pay_ten_rl"));
-		weixin_mode_rl = findViewById(ResUtil.getId(this, "ilong_activity_pay_weixin_rl"));
 	}
 
 	private void InitData() {
@@ -179,7 +180,6 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		alipay_mode_rl.setOnClickListener(this);
 		union_mode_rl.setOnClickListener(this);
 		ten_mode_rl.setOnClickListener(this);
-		weixin_mode_rl.setOnClickListener(this);
 		setPayIsSelected();//取消所有支付选中状态
 		alipay_mode_rl.setSelected(true);
 		setPayMode();//设置支付显示
@@ -215,7 +215,6 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	 * 组织参数，支付
 	 */
 	private void initPayInfo() {
-		
 		// TODO Auto-generated method stub
 		int orderType = getOrderType();
 		float amount = total_amount;
@@ -225,6 +224,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		}else{
 			isCharge = false;
 		}
+		
 		if (lyPayOrder == null) {
 			lyPayOrder = new LyPayOrder(pack_key, amount*100+"", app_order_id, app_uid, notify_uri, product_name, product_id, app_username, access_token);
 		}
@@ -233,7 +233,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	}
 	
 	/**
-	 * 获取支付方式，前提条件是勾选了出火拉币支付外的方式
+	 * 获取支付方式，前提条件是勾选了出龙渊币支付外的方式
 	 * @return 获取支付方式
 	 */
 	private int getOrderType() {
@@ -246,9 +246,6 @@ public class LyPayActivity extends Activity implements OnClickListener{
 			}else if(ten_mode_rl.isSelected()){
 				orderType = 2;
 			}
-			else if(weixin_mode_rl.isSelected()){
-				orderType = 4;
-			}
 		}
 		return orderType;
 	}
@@ -256,7 +253,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	/**
 	 * 设置支付按钮
 	 * @param total 一共需要付多少
-	 * @param ly_amount 火拉币扣除多少
+	 * @param ly_amount 龙渊币扣除多少
 	 */
 	private void setOverPay() {
 		if(choose_ly_bt.isSelected()&&ly_amount<total_amount){
@@ -266,7 +263,6 @@ public class LyPayActivity extends Activity implements OnClickListener{
 			if(choose_ly_bt.isSelected()){
 				pay_bt.setText("立即支付");
 			}else{
-				//各个渠道支付所走的代码
 				pay_bt.setText(Html.fromHtml("立即支付<font size = '"+DeviceUtil.convertspTopx(this, 30f)+"' color = '#ffb769'>"+total_amount+"</font>元"));
 			}
 		}
@@ -329,7 +325,6 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		alipay_mode_rl.setSelected(false);
 		union_mode_rl.setSelected(false);
 		ten_mode_rl.setSelected(false);
-		weixin_mode_rl.setSelected(false);
 	}
 	/**
 	 * 设置选择的icon
@@ -341,10 +336,10 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	}
 
 	/**
-	 * 设置火拉币数量
+	 * 设置龙渊币数量
 	 */
 	private void setLyNuberInfo() {
-		ly_number_info_tv.setText(Html.fromHtml("使用火拉币：<font color = '#ff722c'>"+(int)ly_amount+"</font>"));
+		ly_number_info_tv.setText(Html.fromHtml("使用龙渊币：<font color = '#ff722c'>"+(int)ly_amount+"</font>"));
 	}
 	@Override
 	public void onClick(View view) {
@@ -371,7 +366,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		//返回
 		}else if(viewId == ResUtil.getId(LyPayActivity.this, "ilong_activity_pay_back")){
 			exit();
-		//火拉币勾选
+		//龙渊币勾选
 		}else if(viewId == ResUtil.getId(this, "ilong_activity_pay_ly_choose")){
 			if(choose_ly_bt.isSelected()){//判断是否在勾选状态
 				if(!getIschoosePayMode()){//是否有勾选项
@@ -402,7 +397,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 			}
 			setLyChosse(!choose_ly_bt.isSelected());
 			setOverPay();
-		//火拉币信息刷新
+		//龙渊币信息刷新
 		}else if(viewId == ResUtil.getId(LyPayActivity.this, "ilong_activity_pay_ly_refresh")){
 			 Animation animation = AnimationUtils.loadAnimation(LyPayActivity.this,
 					 ResUtil.getAnimationID(LyPayActivity.this, "loading"));
@@ -423,12 +418,8 @@ public class LyPayActivity extends Activity implements OnClickListener{
 			if(!payModeLayout.isFocusable()) return;
 			setPayIsSelected();
 			ten_mode_rl.setSelected(true);
-		//微信支付
-		}else if(viewId ==ResUtil.getId(LyPayActivity.this, "ilong_activity_pay_weixin_rl")){
-			if(!payModeLayout.isFocusable()) return;
-			setPayIsSelected();
-			weixin_mode_rl.setSelected(true);
 		}
+		
 	}
 	
 	/**
@@ -439,10 +430,12 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	private void createOrderNumber(final int orderType, LyPayOrder lyPayOrder, final String password,final String amount,String recharge) {
 		isCharge = recharge != null;
 		showGetOrderDialog("订单获取中，请稍候....");
-		String url = LyUrlConstant.BASE_URL + LyUrlConstant.PAY_ORDER;
+		//String url = LyUrlConstant.BASE_URL + LyUrlConstant.PAY_ORDER;
+		String url = "http://139.129.21.196/hola_sdk_server/pay/create_order.php";
 		final Map<String, Object> params = new HashMap<String, Object>(0);
 		params.put("pack_key", lyPayOrder.getPack_key());
-		params.put("amount", (int)(Float.parseFloat(amount)*100));
+		//params.put("amount", (int)(Float.parseFloat(amount)*100));
+		params.put("amount", amount);
 		String app_order_id = lyPayOrder.getApp_order_id();
 		params.put("app_order_id",lyPayOrder.getApp_order_id()+(recharge==null?"":"recharge"));
 		params.put("app_uid", lyPayOrder.getApp_uid());
@@ -451,16 +444,16 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		params.put("product_id", lyPayOrder.getProduct_id());
 		params.put("app_username", lyPayOrder.getApp_username());
 		params.put("access_token", lyPayOrder.getAccess_token());
+		params.put("platform", "android");
+		params.put("game_name", "10001");
 		if (orderType == 0) {
 			params.put("channel", "alipayquick");
 		} else if (orderType == 1) {
-			params.put("channel", "upmp");
+			params.put("channel", "wechatpay");
 		} else if (orderType == 2) {
 			params.put("channel", "ten");
 		}else if (orderType == 3) {
 			params.put("channel", "ilypay");
-		}else if(orderType == 4){
-			params.put("channel", "alipayquick");
 		}
 		if (!TextUtils.isEmpty(IlongSDK.getInstance().getSid())){
 			params.put("pack_key", IlongSDK.getInstance().getSid());
@@ -468,19 +461,17 @@ public class LyPayActivity extends Activity implements OnClickListener{
 //		Gamer.sdkCenter.setpayment("", "", "CNY", params.get("channel").toString(), Float.parseFloat(amount)*100);
 //		Log.d("gst", "生成订单的url-->"+url);
 		System.out.println("生成订单："+JSON.toJSON(params));
-		Log.d(Tag, "生成订单信息 params:" + params.toString());
-		HttpUtil.newHttpsIntance(this).httpsPostJSON(this, url, params, new SdkJsonReqHandler(params) {
+		HttpUtil.newHttpsIntance(this).httpsPost(this, url, params, new SdkJsonReqHandler(params) {
 
 			@Override
 			
 			public void ReqYes(Object reqObject, final String content) {
 				try {
-					Log.d(TAG, "提交商品信息服务器返回的content:" + content);
 					dissmissOrderDilaog();
 					RespModel respModel = Json.StringToObj(content, RespModel.class);
 					if (respModel.getErrno() == 200) {
 						JSONObject dataObject=JSONObject.parseObject(respModel.getData());
-						OrderNumber orderNumber = Json.StringToObj(respModel.getData(), OrderNumber.class); //获取商品订单号
+						OrderNumber orderNumber = Json.StringToObj(respModel.getData(), OrderNumber.class);
 						orderNumber.getOut_trade_no();
 						if (null == orderNumber || null == orderNumber.getOut_trade_no() || orderNumber.getOut_trade_no().isEmpty()) {
 							onMakeOrderFailed();
@@ -493,10 +484,8 @@ public class LyPayActivity extends Activity implements OnClickListener{
 						onMakeOrderFailed();
 					}
 				} catch (Exception e) {
-					Intent intent = new Intent(LyPayActivity.this,LyWeixinPay.class);
-					startActivity(intent);
 					e.printStackTrace();
-					//onMakeOrderFailed();
+					onMakeOrderFailed();
 				}
 			}
 
@@ -546,59 +535,72 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		//已经生成订单号
 		switch (orderType) {
 			case 0:
-				//aliyPay(pay_info);
-				aliPay(pay_info);
-				
+				aliyPay(pay_info);
 				break;
 			case 1:
-				//微信支付
-				//weixinPay(pay_info);
-				//upPay(orderId);
-				Intent intent = new Intent(LyPayActivity.this,LyWeixinPay.class);
-				startActivity(intent);
-				
+				doWXPay(pay_info);
 				break;
 			case 2:
 				cftPay(amount+"", orderId, LyUrlConstant.BASE_URL + LyUrlConstant.RETURN_NOTIFY);
 				break;
-			case 4:
-				//weixinPay(pay_info);
 			case 3:
 				longPay(orderId, password);
 				break;
-				
 			default:
 				break;
 		}
 	}
 	
-	//private LyWeixinPay weixinPay;
-	/**
-	 * 微信支付
-	 * @param pay_info
-	 */
-//	private void weixinPay(String pay_info) {
-//		if(weixinPay == null){
-//			weixinPay = new LyWeixinPay();
-//			ToastUtils.show(LyPayActivity.this, "微信");
-//		}
-//		weixinPay.pay(pay_info);
-//	}
 	
-	private HolaAlipay holaAlipay;
-	
-	private void aliPay(String pay_info){
-		if(holaAlipay == null){
-			holaAlipay = new HolaAlipay(this, lyPayResult);
+	private void doWXPay(String pay_info){
+		org.json.JSONObject mJsonObject = null;
+    	try {
+			mJsonObject = new org.json.JSONObject(pay_info);
+		} catch (JSONException e) {
+			e.printStackTrace();
 		}
-		holaAlipay.payV2(pay_info);
+    	//String wx_appid = "wx8755c966ad175c4c";
+    	String wx_appid = mJsonObject.optString("appid");
+    	WXPay.init(getApplicationContext(), wx_appid);
+    	WXPay.getInstance().doPay(pay_info, new WXPayResultCallBack() {
+			
+			@Override
+			public void onSuccess() {
+				Toast.makeText(getApplicationContext(), "支付成功", Toast.LENGTH_SHORT).show();
+			}
+			
+			@Override
+			public void onError(int error_code) {
+				switch (error_code) {
+				case WXPay.NO_OR_LOW_WX:
+					Toast.makeText(getApplicationContext(), "网络异常", Toast.LENGTH_SHORT).show();
+					break;
+					
+				case WXPay.ERROR_PAy:
+					Toast.makeText(getApplicationContext(), "支付失败", Toast.LENGTH_SHORT).show();
+					break;
+					
+				case WXPay.ERROR_PAY_PARAM:
+					Toast.makeText(getApplicationContext(), "订单参数不对", Toast.LENGTH_SHORT).show();
+					break;
+
+				default:
+					break;
+				}
+			}
+			
+			@Override
+			public void onCancel() {
+				Toast.makeText(getApplicationContext(), "支付取消", Toast.LENGTH_SHORT).show();
+			}
+		});
 	}
 	
 	private LyAlipay alipay;
 	/**
 	 * 支付宝支付
 	 */
-	private void aliyPay1(String pay_info) {
+	private void aliyPay(String pay_info) {
 		if (alipay == null) {
 			alipay = new LyAlipay(this, lyPayResult);
 		}
@@ -618,7 +620,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	}
 
 	/**
-	 * 火拉币支付
+	 * 龙渊币支付
 	 * @param out_trade_no
 	 * @param password
 	 */
@@ -627,21 +629,21 @@ public class LyPayActivity extends Activity implements OnClickListener{
 		Map<String, Object> params = new HashMap<String, Object>(0);
 		params.put("out_trade_no", out_trade_no);
 		params.put("password", password);
-		Log.d("gst", "火拉币支付的url-->"+url);
+		Log.d("gst", "龙渊币支付的url-->"+url);
 		HttpUtil.newHttpsIntance(this).httpsPostJSON(this, url, params, new SdkJsonReqHandler(params) {
 
 			@Override
 			public void ReqYes(Object reqObject, final String content) {
 				dissmissOrderDilaog();
-				Log.d("gst","火拉币支付的时候，返回的 content-->"+content);
+				Log.d("gst","龙渊币支付的时候，返回的 content-->"+content);
 				RespModel respModel = Json.StringToObj(content, RespModel.class);
 				if (null == respModel) {
-					lyPayResult.lyPayNo(3, "火拉币支付失败");
+					lyPayResult.lyPayNo(3, "龙渊币支付失败");
 				} else {
 					if (respModel.getErrno() == 200) {
 						lyPayResult.lyPayYes(3);
 					} else {
-						Log.d("gst", "火拉币支付失败的--》+errno--》"+respModel.getErrno());
+						Log.d("gst", "龙渊币支付失败的--》+errno--》"+respModel.getErrno());
 						if(411 == respModel.getErrno()){
 							goWebIlongReCharge();
 						}else{
@@ -655,7 +657,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 			@Override
 			public void ReqNo(Object reqObject, NetException slException) {
 				dissmissOrderDilaog();
-				lyPayResult.lyPayNo(3, "火拉币支付失败");
+				lyPayResult.lyPayNo(3, "龙渊币支付失败");
 			}
 		});
 		showGetOrderDialog("支付中，请稍候....");
@@ -738,7 +740,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 				payresultdialog.setPayState(PayResultType.CANEL);
 			}
 //			payresultdialog.setResultType(PayResultType.f);
-//			//火拉币支付失败不隐藏
+//			//龙渊币支付失败不隐藏
 //			if(payType!=3){
 //				finish();
 //			}
@@ -749,7 +751,8 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	 * 更新用户信息
 	 */
 	public void updataUserInfo(final boolean isPay,int delayTime){
-		String url = Constant.httpHost + Constant.USER_DETAIL;
+		//String url = Constant.httpHost + Constant.USER_DETAIL;
+		String url = "http://139.129.21.196/hola_sdk_server/uid.php";
 		Map<String, Object> params = new HashMap<String, Object>(0);
 		params.put("access_token", access_token);
     	HttpUtil.newHttpsIntance(LyPayActivity.this).httpPost(LyPayActivity.this, url, params, new DelayJsonHttpResponseHandler(params,System.currentTimeMillis(),delayTime) {
@@ -784,7 +787,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	}
 
 	/**
-	 * 更新火拉币信息
+	 * 更新龙渊币信息
 	 */
 	private void checkLyCoin(final boolean isPay) {
 	
@@ -852,7 +855,7 @@ public class LyPayActivity extends Activity implements OnClickListener{
 	/**展示跳转设置支付密码的 dialog */
 	public  void goSetPWDDialog(){
 		final PayEixtDialog dialog = new PayEixtDialog(LyPayActivity.this);
-		dialog.setMessage("您未设置火拉币支付密码\n是否设置支付密码？");
+		dialog.setMessage("您未设置龙渊币支付密码\n是否设置支付密码？");
 		dialog.setCanelText("取  消");
 		dialog.setPositive("确  定");
 		dialog.setPositiveListener(new OnClickListener() {

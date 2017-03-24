@@ -4,6 +4,9 @@
 # view AndroidManifest.xml #generated:42
 -keep class com.longyuan.sdkdemo.TestCoupon { <init>(...); }
 
+# view AndroidManifest.xml #generated:31
+-keep class com.qianhuan.yxgsd.holagames.MainActivity { <init>(...); }
+
 # view AndroidManifest.xml #generated:73
 -keep class com.qianhuan.yxgsd.holagames.ac.ActivityBindPhone { <init>(...); }
 
@@ -34,14 +37,8 @@
 # view AndroidManifest.xml #generated:114
 -keep class com.qianhuan.yxgsd.holagames.pay.tenpay.LyCftPayActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:135
--keep class com.qianhuan.yxgsd.holagames.pay.weixinpay.AppRegister { <init>(...); }
-
 # view AndroidManifest.xml #generated:100
--keep class com.qianhuan.yxgsd.holagames.pay.weixinpay.LyWeixinPay { <init>(...); }
-
-# view AndroidManifest.xml #generated:31
--keep class com.qianhuan.yxgsd.holagamesdk.MainActivity { <init>(...); }
+-keep class com.qianhuan.yxgsd.holagames.pay.weixinpay.WXPayCallbackActivity { <init>(...); }
 
 # view res/layout/mm_title.xml #generated:10
 # view res/layout/mm_title.xml #generated:28

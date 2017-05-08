@@ -4,7 +4,7 @@ import android.content.Context;
 
 /**
  * 资源文件工具
- * @author niexiaoqiang
+ * @author xiaowei
  */
 public class ResUtil {
 

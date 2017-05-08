@@ -63,8 +63,6 @@ public class MainActivity extends Activity {
 		
 		doInit();
 		doInitView();
-		
-
 	}
 	
 	
